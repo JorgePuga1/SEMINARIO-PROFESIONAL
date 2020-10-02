@@ -1,23 +1,20 @@
-
-const model = require( './model' )
-
+const model = require('./model')
 
 function addCarrera( objeto ) {
     const carrera = new model( objeto )
     carrera.save()
-    
 }
 
 async function getCarreras( filtroCarrera ) {
     let filtro = {}
-    if(filtroCarrera !=null){
-        filtro = { nombre:filtroCarrera }
+    if (filtroCarrera != null) {
+        filtro = { nombre : filtroCarrera }
     }
     const carreraList = await model.find( filtro )
     return carreraList
 }
 
-async function updateCarrera( idCarrera , objeto ) {
+async function updateCarrera( idCarrera, objeto ) {
     const foundCarrera = await model.findOne({ _id: idCarrera })
 
     foundCarrera.nombre = objeto.nombre
@@ -31,6 +28,7 @@ async function updateCarrera( idCarrera , objeto ) {
 function deleteCarrera(idCarrera) {
     return model.deleteOne({ _id: idCarrera })
 }
+
 module.exports = {
     add: addCarrera,
     get: getCarreras,
