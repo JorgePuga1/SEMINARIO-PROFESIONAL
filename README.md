@@ -1,2 +1,0 @@
-# SEMINARIO-PROFESIONAL
-Node.js + MongoDB

@@ -13,7 +13,7 @@ const mySchema = new schema({
     apellido: {
         type: String,
         required: true,
-    },
+    }
 })
 
 const model = mongoose.model( 'Estudiante', mySchema )
